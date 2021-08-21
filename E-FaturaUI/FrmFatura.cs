@@ -1,6 +1,6 @@
 ﻿using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors;
-using E_FaturaUI.tr.com.edmbilisim.test;
+using hm.common.Ubltr.Invoice21;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +29,7 @@ namespace E_FaturaUI
         {
             texFaturaNo.Text = "ABC2009123456789";
             txtCariKodu.Text = "120 10 01 002";
-            textCariAdi.Text = "Hasan Yılmaz";
+            textCariAdi.Text = "Sefa  Dudu";
             dateTarih.EditValue=DateTime.Now;
             textSube.Text = "001 Merkez Şube";
             faturaTablo.DataSource = new BindingList<FaturaHareket>
@@ -150,7 +150,7 @@ namespace E_FaturaUI
                 ,
                 CustomizationID = new CustomizationIDType { Value = "TR1.2" }
                 ,
-                ProfileID = new ProfileIDType { Value = "EFATURA" }
+                ProfileID = new ProfileIDType { Value = "TICARIFATURA" }
                 ,
                 ID = new IDType { Value = faturaBilgi.FaturaNo },
                 CopyIndicator = new CopyIndicatorType { Value = false },
@@ -403,8 +403,10 @@ namespace E_FaturaUI
             Process.Start(Application.StartupPath + "\\EArsivFaturalar");
             XmlSerializerNamespaces XmlNameSpace()
             {
-                var ns = new XmlSerializerNamespaces();
+                   var ns = new XmlSerializerNamespaces();
                 ns.Add("cac", "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2");
+                ns.Add("ccts", "urn:un:unece:uncefact:documentation:2");
+                ns.Add("clm54217", "urn:un:unece:uncefact:codelist:specification:54217:2001");
                 ns.Add("cbc", "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2");
                 ns.Add("xades", "http://uri.etsi.org/01903/v1.3.2#");
                 ns.Add("udt", "urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2");
@@ -417,9 +419,20 @@ namespace E_FaturaUI
                 ns.Add("sh", "http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader");
                 ns.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
                 ns.Add("sch", "http://purl.oclc.org/dsdl/schematron");
-                ns.Add("urn", "urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2");
-                ns.Add("urn1", "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2");
-                ns.Add("urn2", "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2");
+                ns.Add("clm66411", "urn:un:unece:uncefact:codelist:specification:66411:2001");
+                ns.Add("clmIANAMIMEMediaType", "urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003");
+                ns.Add("fn", "http://www.w3.org/2005/xpath-functions");
+                ns.Add("link", "http://www.xbrl.org/2003/linkbase");
+                ns.Add("n1", "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2");
+                ns.Add("qdt", "urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2");
+                ns.Add("udt",  "urn: un:unece: uncefact: data: specification: UnqualifiedDataTypesSchemaModule: 2");
+                ns.Add("xbrldi", "http://xbrl.org/2006/xbrldi" );
+                ns.Add("xbrli", "http://www.xbrl.org/2003/instance");
+                ns.Add("xdt", "http://www.w3.org/2005/xpath-datatypes");
+                ns.Add("xdt", "http://www.w3.org/1999/xlink");
+                ns.Add("xs", "http://www.w3.org/2001/XMLSchema");
+                ns.Add("xsd", "http://www.w3.org/2001/XMLSchema");
+                ns.Add("lcl", "http://www.w3.org/2001/XMLSchema");
 
                 return ns;
             }

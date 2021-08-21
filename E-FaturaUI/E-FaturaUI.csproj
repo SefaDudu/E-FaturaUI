@@ -74,7 +74,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UBLInvoice.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="UBL-Invoice-2.1.designer.cs" />
+    <Compile Include="UBL-Invoice-2.1.designer.Extension.cs" />
+    <Compile Include="UBLTR-ApplicationResponse-2.0.designer.cs" />
     <Compile Include="Web References\tr.com.edmbilisim.test\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -226,9 +229,6 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>E_FaturaUI_tr_com_edmbilisim_test_EFaturaEDM</CachedSettingsPropName>
     </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="general.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
