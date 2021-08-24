@@ -1,2 +1,2 @@
 # E-FaturaUI
-Win Form E-Fatura Oluşturma EDM format xml
+E-Fatura XML'i oluşturmak için hazırlamış olduğum(EDM ŞİRKETİNİN XML YAPISINDA) winform uygulaması
